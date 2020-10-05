@@ -101,7 +101,7 @@ public class LinkedListDemo {
 		Node fastPointer = head;
 		Node slowPointer = head;
 
-		while (fastPointer.next != null) {
+		while(fastPointer.next!=null && fastPointer.next.next!=null){
 			slowPointer = slowPointer.next;
 			fastPointer = fastPointer.next.next;
 		}
@@ -112,7 +112,7 @@ public class LinkedListDemo {
 		currentNode = head;
 		System.out.print("\n");
 		System.out.print(currentNode.data + " ");
-		while (currentNode.next != null) {
+		while (currentNode.next != null && currentNode.next.next!=null) {
 			currentNode = currentNode.next.next;
 			System.out.print(currentNode.data + " ");
 		}
@@ -141,7 +141,7 @@ public class LinkedListDemo {
 	public void ifLoopExists() {
 		Node fastPtr = head;
 		Node slowPtr = head;
-		while (fastPtr != null && fastPtr.next != null) {
+		while (fastPtr != null && fastPtr.next != null && fastPtr.next.next != null) {
 			fastPtr = fastPtr.next.next;
 			slowPtr = slowPtr.next;
 			if (slowPtr == fastPtr)
