@@ -174,4 +174,20 @@ public class LinkedListDemo {
 		else
 			System.out.println("Not Palindrome");
 	}
+	
+	public void nthLastElement(int i) {
+		Node fastPointer = head;
+		Node slowPointer = head;
+		
+		for (int j = 0; j < i; j++) {
+			fastPointer = fastPointer.next;
+		}
+		
+		while (fastPointer.next!=null) {
+			fastPointer = fastPointer.next;
+			slowPointer = slowPointer.next;
+		}
+		System.out.println(slowPointer.data);
+		
+	}
 }
