@@ -153,23 +153,26 @@ public class LinkedListDemo {
 		Stack<Integer> stack = new Stack<>();
 		boolean ispalin = false;
 		currentNode = head;
+
 		while (currentNode.next != null) {
 			stack.push(currentNode.data);
 			currentNode = currentNode.next;
 		}
 		stack.push(currentNode.data);
+
 		currentNode = head;
 		while (currentNode.next != null) {
-			if (currentNode.data != stack.pop()) {
+			if (currentNode.data == stack.pop())
 				ispalin = true;
-			} else
+			else {
 				ispalin = false;
-
+				break;
+			}
 			currentNode = currentNode.next;
 		}
 		stack.push(currentNode.data);
-		
-		if(ispalin)
+
+		if (ispalin)
 			System.out.println("Palindrome");
 		else
 			System.out.println("Not Palindrome");
