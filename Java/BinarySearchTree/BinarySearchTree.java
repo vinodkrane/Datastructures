@@ -24,13 +24,11 @@ public class BinarySearchTree {
 				_insert(currentNode.left, data);
 			}
 		} else {
-			if (currentNode.data < data) {
 				if (currentNode.right == null) {
 					currentNode.right = new Node(data);
 				} else {
 					_insert(currentNode.right, data);
 				}
-			}
 		}
 	}
 
